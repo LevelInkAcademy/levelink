@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08030d" />
+  <meta name="description" content="Level Ink — curso de tatuagem. Eleve sua arte para outro nível." />
+  <title>Level Ink | Eleve sua arte para outro nível</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="inicio">
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/logo-level-ink.png">
+      <source src="assets/apresentacao-level-ink.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+    <div class="hero-overlay"></div>
+
+    <nav class="nav">
+      <a class="brand" href="#inicio" aria-label="Level Ink - início">LEVEL <span>INK</span></a>
+      <a class="nav-whatsapp" href="https://wa.me/5521969696258?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Level%20Ink%20e%20quero%20saber%20mais%20sobre%20o%20curso%20de%20tatuagem." target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+
+    <button class="sound-button" id="soundButton" type="button" aria-pressed="false">🔊 Ativar som</button>
+
+    <main class="hero-content">
+      <img src="assets/logo-level-ink.png" alt="Level Ink" class="hero-logo" />
+      <p class="eyebrow">FORMAÇÃO • TÉCNICA • EVOLUÇÃO ARTÍSTICA</p>
+      <h1>Eleve sua arte para outro nível.</h1>
+      <p class="lead">Uma experiência de aprendizado criada para transformar técnica em identidade e evolução em profissão.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#curso">Conhecer o curso</a>
+        <a class="btn btn-outline" href="https://wa.me/5521969696258?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Level%20Ink%20e%20quero%20saber%20mais%20sobre%20o%20curso%20de%20tatuagem." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+    </main>
+    <a class="scroll" href="#curso" aria-label="Ir para a próxima seção">⌄</a>
+  </header>
+
+  <section class="course" id="curso">
+    <div class="course-art" aria-hidden="true"></div>
+    <div class="course-content">
+      <span class="section-kicker">LEVEL INK ACADEMY</span>
+      <h2>Do fundamento à evolução da sua assinatura artística.</h2>
+      <p>Aprenda com uma estrutura pensada para desenvolver domínio técnico, percepção artística e segurança na construção do seu trabalho como tatuador.</p>
+      <div class="features">
+        <article><strong>01</strong><h3>Fundamentos</h3><p>Construa uma base sólida para evoluir com consistência.</p></article>
+        <article><strong>02</strong><h3>Técnica</h3><p>Refine execução, precisão e leitura visual do trabalho.</p></article>
+        <article><strong>03</strong><h3>Identidade</h3><p>Desenvolva sua linguagem e eleve a apresentação da sua arte.</p></article>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/5521969696258?text=Ol%C3%A1%21%20Quero%20receber%20informa%C3%A7%C3%B5es%20sobre%20o%20curso%20Level%20Ink." target="_blank" rel="noopener">Quero informações</a>
+    </div>
+  </section>
+
+  <footer><span>LEVEL INK</span><p>Eleve sua arte para outro nível.</p></footer>
+
+  <script>
+    const video = document.getElementById('heroVideo');
+    const soundButton = document.getElementById('soundButton');
+    video.play().catch(() => {});
+    soundButton.addEventListener('click', async () => {
+      video.muted = !video.muted;
+      if (video.paused) { try { await video.play(); } catch (e) {} }
+      soundButton.textContent = video.muted ? '🔊 Ativar som' : '🔇 Desativar som';
+      soundButton.setAttribute('aria-pressed', String(!video.muted));
+    });
+  </script>
+</body>
+</html>
